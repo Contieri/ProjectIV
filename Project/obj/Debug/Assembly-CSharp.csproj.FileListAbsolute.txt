@@ -280,3 +280,5 @@ C:\Users\IV\Documents\Project\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs
 C:\Users\IV\Documents\Project\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\IV\Documents\Project\obj\Debug\Assembly-CSharp.dll
 C:\Users\IV\Documents\Project\obj\Debug\Assembly-CSharp.pdb
+C:\Users\IV\Documents\Project\Temp\bin\Debug\DOTween.dll
+C:\Users\IV\Documents\Project\Temp\bin\Debug\DOTween.xml

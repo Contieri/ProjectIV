@@ -575,7 +575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -228.5, y: 63.19507}
+  m_AnchoredPosition: {x: -180, y: 30}
   m_SizeDelta: {x: 159, y: 121.81}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &587705274
@@ -716,6 +716,7 @@ GameObject:
   - component: {fileID: 793119903}
   - component: {fileID: 793119902}
   - component: {fileID: 793119901}
+  - component: {fileID: 793119905}
   - component: {fileID: 793119904}
   m_Layer: 0
   m_Name: Cube
@@ -809,6 +810,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DescriptionText: esse ob dljal
+--- !u!114 &793119905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793119899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc3850ab29181c44aea1ddc6a91c1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  To: {fileID: 0}
+  Duration: 3
+  Color: {r: 0, g: 0, b: 0, a: 0}
+  ToColor: {r: 0.6698113, g: 0.18669449, b: 0.034754362, a: 1}
 --- !u!1 &902356899
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +905,7 @@ GameObject:
   - component: {fileID: 991630650}
   - component: {fileID: 991630649}
   - component: {fileID: 991630648}
+  - component: {fileID: 991630653}
   m_Layer: 5
   m_Name: Sphere
   m_TagString: Untagged
@@ -980,6 +998,22 @@ Transform:
   m_Father: {fileID: 1606861332}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &991630653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991630647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc3850ab29181c44aea1ddc6a91c1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  To: {fileID: 0}
+  Duration: 3
+  Color: {r: 0, g: 0, b: 0, a: 0}
+  ToColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1135358964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -15}
+  m_AnchoredPosition: {x: -2, y: -15}
   m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135453612
@@ -1383,6 +1417,7 @@ GameObject:
   - component: {fileID: 1604480053}
   - component: {fileID: 1604480052}
   - component: {fileID: 1604480051}
+  - component: {fileID: 1604480054}
   - component: {fileID: 1604480050}
   m_Layer: 5
   m_Name: Capsule
@@ -1476,6 +1511,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604480048}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1604480054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604480048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc3850ab29181c44aea1ddc6a91c1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  To: {fileID: 0}
+  Duration: 3
+  Color: {r: 0.3689585, g: 0.8962264, b: 0.31706125, a: 0}
+  ToColor: {r: 0.2931999, g: 0.8207547, b: 0.19744569, a: 0}
 --- !u!1 &1606861330
 GameObject:
   m_ObjectHideFlags: 0
