@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -13,7 +14,7 @@ public class UIManager : MonoBehaviour
 
     public ObjectManager Manager;
 
-    public Text ObjectNameText;
+    public TextMeshProUGUI ObjectNameText;
 
     private List<PropertyToggle> _toggles = new List<PropertyToggle>();
 

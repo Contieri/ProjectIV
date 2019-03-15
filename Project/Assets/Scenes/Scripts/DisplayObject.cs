@@ -1,12 +1,11 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class DisplayObject : MonoBehaviour
 {
     public string DescriptionText;
-
+    
     public List<string> Properties { get; } = new List<string>();
 
     private Animator _animator;
