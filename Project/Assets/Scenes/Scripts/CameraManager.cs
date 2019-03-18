@@ -7,6 +7,7 @@ public class CameraManager : MonoBehaviour
     public Transform CenterOfInterest;
 
     private Vector2 _lastMouse;
+    private Vector2 _lastMouseRight;
 
     public float Sensivity = 1;
 
@@ -15,6 +16,8 @@ public class CameraManager : MonoBehaviour
 
     private float _angleX;
     private float _angleY;
+
+    private float _moveDownY;
 
     void Start()
     {
@@ -45,7 +48,8 @@ public class CameraManager : MonoBehaviour
 
     void Transladeobject()
     {
-        Vector2 current = Input.mousePosition;    
+      
+
     }
 
     void MaximizeAndMinimizeObject()
@@ -73,6 +77,16 @@ public class CameraManager : MonoBehaviour
         else if (Input.GetMouseButton(0))
         {
             RotateComponent();   
+        }
+
+
+        if (Input.GetMouseButton((1)))
+        {
+            _lastMouseRight = Input.mousePosition;
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            Transladeobject();
         }
 
         MaximizeAndMinimizeObject();
