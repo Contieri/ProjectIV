@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -14,17 +15,47 @@ public class UIManager : MonoBehaviour
 
     public ObjectManager Manager;
 
-    public TextMeshProUGUI ObjectNameText;
+    public Button InformationButton;
+    public TextMeshProUGUI InformationText;
+    public float InformationOpenTime = 0.2f;
 
-    private List<PropertyToggle> _toggles = new List<PropertyToggle>();
+    private readonly List<PropertyToggle> _toggles = new List<PropertyToggle>();
+
+    private bool _informationOpen;
 
     private void Start()
     {
         PreviousButton.onClick.AddListener(Previous);
         NextButton.onClick.AddListener(Next);
+        InformationButton.onClick.AddListener(InformationClicked);
         UpdateObject();
     }
-    
+
+    private void InformationClicked()
+    {
+        _informationOpen = !_informationOpen;
+        UpdateInformationTransform(true);
+    }
+
+    private void UpdateInformationTransform(bool tween)
+    {
+        RectTransform textTransform = InformationText.rectTransform;
+        float size = textTransform.sizeDelta.y;
+
+        float targetPos = _informationOpen ? 0 : size;
+
+        if (tween)
+        {
+            textTransform.DOLocalMoveY(targetPos, InformationOpenTime);
+        }
+        else
+        {
+            Vector3 pos = textTransform.localPosition;
+            pos.y = size;
+            textTransform.localPosition = pos;
+        }
+    }
+
     void Previous()
     {
         Manager.Previous();
@@ -39,6 +70,8 @@ public class UIManager : MonoBehaviour
 
     private void UpdateObject()
     {
+        _informationOpen = false;
+
         foreach (PropertyToggle toggle in _toggles)
         {
             Destroy(toggle.gameObject);
@@ -55,7 +88,15 @@ public class UIManager : MonoBehaviour
             toggle.SetProperty(current, property);
             _toggles.Add(toggle);
         }
+        
+        InformationText.text = Manager.Current.DescriptionText;
 
-        ObjectNameText.text = Manager.Current.DescriptionText;
+        StartCoroutine(UpdateInformationRoutine());
+    }
+
+    IEnumerator UpdateInformationRoutine()
+    {
+        yield return new WaitForEndOfFrame();
+        UpdateInformationTransform(false);
     }
 }

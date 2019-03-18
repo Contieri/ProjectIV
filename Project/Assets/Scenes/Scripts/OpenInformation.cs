@@ -7,7 +7,7 @@ public class OpenInformation : MonoBehaviour
 {
     public Transform To;
     public float Duration = 5;
-   
+
 
     Vector3 GetPosition()
     {
@@ -26,17 +26,14 @@ public class OpenInformation : MonoBehaviour
         return To.position;
     }
 
-    Vector3 GetNewScale()
+    Vector3 GetScale()
     {
         return transform.localScale;
     }
 
-    void Start()
-    {  
 
-       // transform.DOMove(GetNewPosition(), Duration, false);
-        //transform.DOLocalMoveY(GetPosition().y, Duration, false);
-        transform.DOScale(GetNewScale(), Duration);
+    void Start()
+    {
 
 
 
