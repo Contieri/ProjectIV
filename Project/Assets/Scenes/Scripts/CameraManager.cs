@@ -18,6 +18,7 @@ public class CameraManager : MonoBehaviour
     private float _angleY;
 
     private float _moveDownY;
+    private float _distance = 0;
 
     void Start()
     {
@@ -41,15 +42,10 @@ public class CameraManager : MonoBehaviour
 
         transform.position = CenterOfInterest.position + Quaternion.Euler(_angleX, _angleY, 0) * CenterOfInterest.forward * Distance;
 
+
         Vector3 direction = CenterOfInterest.position - transform.position;
 
         transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
-    }
-
-    void Transladeobject()
-    {
-      
-
     }
 
     void MaximizeAndMinimizeObject()
@@ -67,6 +63,15 @@ public class CameraManager : MonoBehaviour
 
     }
 
+//    void OnMouseDrag()
+//    {
+//        Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z);
+//        Vector3 objPosition = Camera.main.ScreenToWorldPoint((mousePosition));
+//
+//        transform.position = objPosition;
+//    }
+
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -80,16 +85,14 @@ public class CameraManager : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButton((1)))
-        {
-            _lastMouseRight = Input.mousePosition;
-        }
-        else if (Input.GetMouseButton(1))
-        {
-            Transladeobject();
-        }
 
         MaximizeAndMinimizeObject();
+
+
+//        if (Input.GetMouseButton(1))
+//        {
+//           OnMouseDrag();
+//        }
     }
 
     float ClampAngle(float min, float max, float angle)
